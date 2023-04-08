@@ -35,7 +35,7 @@ def handle_message(update, context):
     update.message.reply_text('Article saved to GitHub!')
 
 # Start the bot and listen for messages
-updater = telegram.ext.Updater('YOUR_TELEGRAM_API_TOKEN', use_context=True)
+updater = telegram.ext.Updater('TELEGRAM_API_TOKEN', use_context=True)
 updater.dispatcher.add_handler(telegram.ext.MessageHandler(telegram.ext.Filters.text, handle_message))
 updater.start_polling()
 updater.idle()
