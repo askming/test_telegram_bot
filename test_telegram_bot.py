@@ -1,12 +1,17 @@
 import telegram
 from github import Github
 from github import InputFileContent
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+TELEGRAM_API_TOKEN = os.getenv("TELEGRAM_API_TOKEN")
+GITHUB_PERSONAL_ACCESS_TOKEN = os.getenv("GITHUB_PERSONAL_ACCESS_TOKEN")
 # Initialize the Telegram bot
-bot = telegram.Bot('6128791021:AAEFtYY4wdTaqSIUG6COiYUUv74RLsSQu8k')
+bot = telegram.Bot(TELEGRAM_API_TOKEN)
 
 # Initialize the GitHub client
-g = Github('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')
+g = Github(GITHUB_PERSONAL_ACCESS_TOKEN)
 
 # Define the repository and file information
 repo_name = 'test_telegram_bot'
